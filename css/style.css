@@ -1,0 +1,1949 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;500&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+/*Обнуляем стили, подготавливаем к работе****/
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*************************/
+
+/*********Для JS***********/
+.status{
+  
+}
+
+/*************************/
+body{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1em;
+
+}
+
+.container {
+    max-width: 100%;
+
+    
+    display: grid;
+    grid-gap: 25px;
+    grid-template-areas:
+    "header"
+    "main"
+    "article_about"
+    "sidebar_why_us"
+    "our_club"
+    "users_photos"
+    "horses_photos"
+    "question"
+    "map"
+    "contacts"
+    "footer";
+}
+.background_main{
+    max-height: 660px;
+    max-width: 100%;
+    background-image: url(../img/фон\ 1.png);
+    background-size: cover;
+    position: relative;
+}
+.clouds{
+  max-width: 100%;
+  max-height: auto;
+  z-index: 5;
+  position: absolute;
+  bottom: 5px;
+
+
+}
+.clouds__img{
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  height: 90px;
+}
+.big_horse{
+  max-height: auto;
+  max-width: 45%;
+  position: absolute;
+  bottom: 80px;
+  left: 180px;
+  z-index: 3;
+  
+}
+.bush__right{
+  position: absolute;
+  max-height: auto;
+  max-width: 45px;
+  right: 0;
+  top: 420px;
+  z-index: 5;
+}
+.bush__left{
+  position: absolute;
+  max-height: auto;
+  max-width: 74px;
+  left: 0px;
+  top: 437px;
+  z-index: 5;
+}
+.seagulls{
+  position: absolute;
+  max-width: 75px;
+  max-height: auto;
+  left: 72px;
+  top: 91px;
+}
+.barn{
+  position: absolute;
+  max-width: 190px;
+  height: auto;
+  left: -15px;
+  top: 445px;
+}
+.small_horse{
+  position: absolute;
+  max-width: 163px;
+  height: auto;
+  left: 579px;
+  top: 394px;
+}
+.jumping_horse{
+  display: none;
+}
+/******** header ******/
+.header {
+    grid-area: header;
+ }
+.nav{
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.header__nav__tel{
+  font-weight: 800;
+  color: black;
+}
+.text__btn__header__nav{
+  font-size: 0.8em;
+  color: #008139;
+}
+.nav-link{
+  color: black;
+  font-size: calc(8px + 8 * (100vw / 1280));
+}
+.nav-link:hover{
+  border-bottom: 2px solid green; 
+  padding-bottom: 5px; 
+}
+
+/****для меню-бургера***/
+
+
+ /******** main ******/
+.main {
+    grid-area: main;
+
+ }
+.title, .subtitle{
+    text-align: center;
+}
+.main__title{
+    font-size: calc(22px + 16 * (100vw / 1280));
+    font-weight: 700;
+    padding-bottom: 15px;
+    margin: 40px 0 0 0;
+}
+.main__gorizontal_line{
+    width: 7%;
+    margin: 0 auto;
+}
+.main__subtitle{
+    color: gray;
+    font-size: calc(8px + 9 * (100vw / 1280));
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 auto;
+    padding-top: 15px;
+
+    max-width: 70%;
+}
+.main__btn{
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 18px 48px 18px 48px;
+    background: rgb(254,255,214);
+    background: linear-gradient(180deg, rgba(254,255,214,1) 0%, rgba(244,208,21,1) 76%);
+    border-radius: 7px;
+    border-bottom: 5px solid #b39917;
+    font-family: 'Montserrat', sans-serif;
+    color: #8a7615;
+    font-size: calc(7px + 14 * (100vw / 1280));
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+  /******** sidebar_about ******/
+.article_about {
+    grid-area: article_about;
+    margin: 15px 0 35px 0;
+
+}
+.article_about__statistic{
+    text-align: center;
+    line-height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+}
+.article_about__statistic__digit{
+    color: #008139;
+    font-size: calc(32px + 16 * (100vw / 1280));
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.article_about__statistic__text{
+    font-size: calc(12px + 16 * (100vw / 1280));
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+.article_about__longtext{
+    color: gray;
+    padding: 0 15px 0 15px;
+    line-height: 1.5em;
+    font-size: calc(11px + 16 * (100vw / 1280));
+    font-family: 'Montserrat', sans-serif;
+}
+ /******** sidebar__why_us ******/
+.sidebar__why_us {
+    grid-area: sidebar__why_us;
+    
+}
+.sidebar_why_us__subtitle{
+  margin: 0 0 15px 0;
+}
+.sidebar_why_us__img-text-block__small-img{
+  max-width: 30%;
+  margin: 0 auto;
+}
+.sidebar_why_us__img-text-block__small-img img{
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;	
+}
+.first-item, .second-item{
+  max-width: 50%;
+}
+.sidebar_why_us__img-text-block__small-title{
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(12px + 9 * (100vw / 1280));
+  font-weight: 700;
+  padding: 10px;
+  text-align: center;
+}
+.sidebar_why_us__img-text-block__small-text{
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(10px + 9 * (100vw / 1280));
+  padding: 15px;
+  text-align: center;
+}
+/******** our_club ******/
+.our_club {
+    grid-area: our_club;
+    padding: 10px;
+    background: no-repeat url("../img/Mask\ Group.png");
+    background-size: 100%;
+    background-size: cover;
+    overflow: hidden;
+}
+.our_club__subtitle{
+  margin: 0 0 60px 0;
+  
+}
+.our_club__cards{
+  display:flex;
+  flex-direction: column;
+  
+ 
+  
+}
+.our_club__cards-item{
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  position: relative;
+  margin: 40px 0 40px 0;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 1px 22px 14px rgba(215, 220, 223, 0.29);
+}
+.our_club__cards-item-img{
+  border-radius: 5px;
+  width: 18rem;
+  height: auto;
+  position:absolute;
+  bottom: 115px;
+  left: 25px;
+}
+.our_club__cards_card-title{
+  padding: 130px 0 0 0;
+  font-size: calc(12px + 10 * (100vw / 1280));
+  font-weight: 700;
+  text-align: center;
+}
+.our_club__cards_card-text{
+  font-size: calc(10px + 9 * (100vw / 1280));
+  color: #7E7E7E;
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+.our_club___btn{
+  margin-bottom: 50px;
+}
+.our_club__people_with_horse_block{
+  position: relative;
+  max-width: 100%;
+
+}
+.our_club__people_with_horse_block-img-boy{
+  position: absolute;
+  width: 90px;
+  height: 181px;
+  left: 260px;
+  bottom: 0;
+  overflow-y: hidden;
+  z-index: 1;
+}
+.our_club__people_with_horse_block-img-girl{
+  position: absolute;
+  width: 80px;
+  height: 191px;
+  left: -10px;
+  overflow-y: hidden;
+  z-index: 1;
+ 
+  bottom: 0;
+}
+.our_club___clouds{
+  z-index: 5;
+  max-width: 100%;
+  max-height: auto;
+  height: 80px;
+  position: relative;
+  bottom: 80px;
+}
+/******** users_photos ******/
+.users_photos {
+    grid-area: users_photos;
+    margin: -20px 0 50px 0;
+}
+.users_photos__subtitle{
+  margin: 10px 0 20px 0;
+}
+
+.users_photos__photo_block{
+  display: grid;
+  grid-template-columns: 42% 15% 43%;
+  grid-template-rows: repeat(4, 3fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  max-width: 100%;
+  
+}
+.users_photos__photo{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  transition: 1s;
+
+  
+}
+.users_photos__photo:hover{
+  transform: scale(1.2);
+}
+
+.photo1 {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.photo2 {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.photo3 {
+  grid-area: 2 / 1 / 3 / 2;
+  
+}
+.photo4 {
+  grid-area: 2 / 2 / 3 / 4;
+}
+.photo5 {
+  grid-area: 3 / 1 / 4 / 3;
+}
+.photo6 {
+  grid-area: 3 / 3 / 4 / 4;
+}
+.photo7 {
+  grid-area: 4 / 1 / 5 / 2; 
+}
+.photo8 {
+  grid-area: 4 / 2 / 5 / 4;
+}
+.photo9 {
+  display: none;
+}
+.photo10 {
+  display: none;
+}
+
+/******** horses_photos ******/
+.horses_photos {
+    grid-area: horses_photos;
+    margin: 40px 0 -10px 0;
+    overflow-x: scroll;
+    height: max-content;
+}
+.horses_photos__cards{
+  display: flex;
+  margin: 0 -5px;
+  width: 1200px;
+  padding-left: 10px;
+}
+.horses_photos__cards-item{
+  width: 30%;
+  max-height: auto;
+  border-radius: 5px;
+  position: relative;
+  margin: 0 10px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0px 10px 5px 3px rgba(215, 220, 223, 0.29);
+}
+
+
+.horses_photos__cards-item-img{
+  border-radius: 5px;
+  max-width: 80%;
+  max-height: auto;
+  position: absolute;
+  bottom: 125px;
+  left: 30px;
+
+}
+.horses_photos__cards_card-title{
+  padding: 280px 0 0 0;
+  font-size: calc(12px + 11 * (100vw / 1280));
+  font-weight: 700;
+  text-align: center;
+}
+.horses_photos__cards_card-text{
+  font-size: calc(10px + 9 * (100vw / 1280));
+  color: #7E7E7E;
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+/******** question ******/
+.clouds-sep__question{
+  z-index: 5;
+  max-width: 100%;
+  max-height: auto;
+  height: 90px;
+  position: relative;
+  top: 87px;
+}
+.question {
+  grid-area: question;
+  max-width: 100%;
+  max-height: auto;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.question__photo-block{
+  background-image: url("../img/фон_вопросы.png");
+  background-size: cover;
+  height: 700px;
+  padding-top: 50px;
+  
+}
+.question__form{
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 30px 20px 30px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 5px;
+  max-height: 500px;
+}
+.question__form__subtitle{
+  font-family: 'Philosopher', sans-serif;
+  margin: 10px 0 15px 0;
+}
+.question__form__main-text{
+  text-align: center;
+  font-size: calc(8px + 14 * (100vw / 1280));
+}
+.form-control__question__form{
+  font-size: calc(7px + 14 * (100vw / 1280));
+  padding: 15px 25px 15px 15px;
+}
+.question__form__btn{
+  display: block;
+  margin: 0 auto;
+  padding: 12px 58px 12px 58px;
+  background: rgb(254,255,214);
+  background: linear-gradient(180deg, rgba(254,255,214,1) 0%, rgba(244,208,21,1) 76%);
+  border-radius: 7px;
+  border-bottom: 5px solid #b39917;
+  font-family: 'Montserrat', sans-serif;
+  color: #8a7615;
+  font-size: calc(9px + 14 * (100vw / 1280));
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.question__form__check{
+  font-size: calc(8px + 14 * (100vw / 1280));
+}
+.question__girl_with_horse_and_dog{
+  position: absolute;
+  width: 737px;
+  height: 640px;
+  left: -59px;
+  top: 530px;
+}
+
+
+/******** map ******/
+.map {
+    grid-area: map;
+}
+.map__google{
+  width: 100%;
+  height: 500px;
+}
+/******** contacts ******/
+.contacts {
+    grid-area: contacts;
+
+}
+.contacts__card{
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 90%;
+  height: 370px;
+  text-align: center;
+  line-height: 1.9;
+}
+.contacts__card__subtitle{
+
+}
+.card-text{
+  padding-top: 20px;
+  margin-left: 12%;
+}
+.card-text-list{
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(12px + 14 * (100vw / 1280));
+  text-align: left;
+}
+.card-text-list-item{
+  display: block;
+  padding-bottom: 5px;
+}
+.contacts__card-footer{
+  padding: 0 50px 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.contacts__card-footer-item{
+  font-size: 2rem;
+}
+.bush__right-contacts{
+    display: none;
+  }
+  .bush__left-contacts{
+    display: none;
+  }
+/******** footer ******/
+.footer {
+    grid-area: footer;
+    height: 500px;
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: calc(10px + 14 * (100vw / 1280));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 25px;
+}
+.footer__about{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer__about__link{
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.footer__button{
+  margin: 0 auto;
+ 
+}
+.footer__button__item{
+   padding: 15px;
+  background: transparent;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  color: white;
+}
+.footer__logo{
+  margin: 0 auto;
+}
+.footer__permission{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.footer__permission__link{
+  color: gray;
+  font-size: calc(6px + 10 * (100vw / 1280));
+  display: inline-block;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.footer__year{
+  margin: 0 auto;
+  font-size: calc(6px + 10 * (100vw / 1280));
+}
+
+
+
+/******** МЕДИА-ЗАПРОСЫ ******/
+/* xs (<=426px) */
+@media (max-width: 426px) {
+ 
+  .nav-link{
+    font-size: 0.8em;
+  }
+  .first__item__header__nav{
+    padding-top: 30px;
+  }
+  .clouds{
+    bottom: 64px;
+  }
+  .big_horse{
+    max-height: auto;
+    max-width: 50%;
+    bottom: 85px;
+    left: 120px;
+    
+  }
+  .small_horse{
+    display: none;
+  }
+    .our_club__people_with_horse_block-img-boy{
+    width: 90px;
+    height: 201px;
+    left: 285px;
+    bottom: -5px;
+
+  }
+  .our_club__people_with_horse_block-img-girl{
+    width: 90px;
+    height: 211px;
+    left: -10px;
+    bottom: -5px;
+
+  }
+  .our_club__cards-item-img{
+    bottom: 130px;
+    left: 35px;
+    width: 80%;
+    height: auto;
+  }
+ 
+}
+
+/* sm (>=427 и <=570) */
+@media (min-width: 427px) and (max-width: 570px) {
+  .nav-link{
+    font-size: 0.8em;
+  }
+  .first__item__header__nav{
+    padding-top: 30px;
+  }
+  .clouds{
+    bottom: 62px;
+    max-height: auto;
+  }
+  .clouds__img{
+    height: 100px;
+    width: 100%;
+    z-index: 4;
+  }
+  .big_horse{
+    max-height: auto;
+    max-width: 41%;
+    bottom: 75px;
+    left: 260px;
+    z-index: 1;
+    
+  }
+  .small_horse{
+    position: absolute;
+    max-width: 90px;
+    height: auto;
+    left: 169px;
+    top: 456px;
+  }
+  .our_club__subtitle{
+    margin: 70px 0 20px 0;
+    text-align: center;
+  }
+  .our_club__cards{
+    padding: 40px 0 20px 20px;
+    max-width: 100%;
+    max-height: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 280px; 
+  }
+  .our_club__cards-item{
+    width: 90%;
+    height: 70%;
+    border-radius: 5px;
+    position: relative;
+    margin: 30px 20px 0 0;
+   
+  }
+  .our_club__cards-item-img{
+    bottom: 130px;
+    left: 25px;
+    width: 80%;
+    height: auto;
+  }
+  .our_club__cards_card-title{
+    padding: 60px 0 0 0;
+    font-size: calc(8px + 8 * (100vw / 1280));
+
+  }
+  .our_club__cards_card-text{
+    font-size: calc(8px + 6 * (100vw / 1280));
+    padding: 10px 10px 0 0;
+  }
+  .our_club__people_with_horse_block-img-boy{
+    width: 100px;
+    height: 221px;
+    left: 450px;
+    bottom: -5px;
+
+  }
+  .our_club__people_with_horse_block-img-girl{
+    width: 100px;
+    height: 231px;
+    left: -10px;
+    bottom: -5px;
+
+  }
+}
+
+/* sm2 (>=571 и <=767) */
+@media (min-width: 571px) and (max-width: 767px) {
+  .nav-link{
+    font-size: 0.8em;
+  }
+  .first__item__header__nav{
+    padding-top: 30px;
+  }
+  .container{
+    padding: 0 40px 0 40px;
+  }
+
+  .clouds{
+    bottom: 62px;
+    max-height: auto;
+  }
+  .clouds__img{
+    height: 100px;
+    width: 100%;
+    z-index: 4;
+  }
+  .big_horse{
+    max-height: auto;
+    max-width: 48%;
+    bottom: 60px;
+    left: 340px;
+    z-index: 1;
+  }
+  .seagulls{
+    max-width: 135px;
+    max-height: auto;
+    left: 420px;
+    top: 117px;
+  }
+  .barn{
+    max-width: 210px;
+    height: auto;
+    left: 75px;
+    top: 445px;
+  }
+  .small_horse{
+    position: absolute;
+    max-width: 100px;
+    height: auto;
+    left: 269px;
+    top: 446px;
+  }
+  .title, .subtitle{
+    text-align: left;
+  }
+  .main{
+    max-width: 50%;
+  }
+  .main__subtitle{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 15px;
+    max-width: 100%;
+  }
+  .main__btn{
+    margin-left: 0;
+  }
+  .jumping_horse{
+    display: inline;
+    position: absolute;
+    width: 381px;
+    height: 123px;
+    left: -26px;
+    top: 829px;
+    z-index: -1;
+  }
+  .article_about__statistic{
+    max-width: 45%;
+    line-height: 1.1em;
+    max-height: auto;
+    margin: 10px 0 40px 340px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+  }
+  .article_about__subtitle{
+    display: inline-block;
+    margin: 50px 0 50px 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .article_about__longtext{
+    max-width: 100%;
+    margin: -20px 15px 30px 15px;
+    line-height: 1.5em;
+    font-size: calc(6px + 11 * (100vw / 1280));
+  }
+  .article_about__statistic__digit{
+    font-size: calc(18px + 16 * (100vw / 1280));
+    text-align: left;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+  .article_about__statistic__text{
+    font-size: calc(6px + 11 * (100vw / 1280));
+    text-align: left;
+    line-height: 1.4em;
+    padding-bottom: 20px;
+}
+  .sidebar_why_us__subtitle{
+    display: inline-block;
+    margin: 60px 0 60px 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .sidebar_why_us__block_without_subtitle{
+    display: flex;
+    padding: 0 35px 0 35px;
+
+  }
+  .sidebar_why_us__img-text-block__small-img{
+    max-width: 45%;
+    margin: 0 auto;
+  }
+  .sidebar_why_us__img-text-block__small-img img{
+    object-fit: contain;
+    max-width: auto;
+    height: 80px;	
+  }
+  .sidebar_why_us__img-text-block__small-title{
+    font-size: calc(4px + 9 * (100vw / 1280));
+  }
+  .sidebar_why_us__img-text-block__small-text{
+    font-size: calc(4px + 9 * (100vw / 1280));
+  }
+  .our_club__subtitle{
+    margin: 70px 0 50px 0;
+    text-align: center;
+  }
+  .our_club__cards{
+    padding: 40px 0 20px 30px;
+    max-width: 100%;
+    max-height: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 330px; 
+  }
+  .our_club__cards-item{
+    width: 90%;
+    height: 70%;
+    border-radius: 5px;
+    position: relative;
+    margin: 30px 20px 0 0;
+   
+  }
+  .our_club__cards-item-img{
+    bottom: 140px;
+    left: 30px;
+    width: 80%;
+    height: auto;
+  }
+  .our_club__cards_card-title{
+    padding: 90px 0 0 0;
+    font-size: calc(9px + 8 * (100vw / 1280));
+
+  }
+  .our_club__cards_card-text{
+    font-size: calc(10px + 6 * (100vw / 1280));
+    padding: 10px 0 0 0;
+  }
+  .our_club__people_with_horse_block-img-boy{
+    width: 100px;
+    height: 221px;
+    left: 650px;
+    bottom: -5px;
+
+  }
+  .our_club__people_with_horse_block-img-girl{
+    width: 100px;
+    height: 231px;
+    left: -10px;
+    bottom: -5px;
+
+  }
+  .our_club___btn{
+    margin: 0 auto;
+  }
+  .users_photos__subtitle{
+    text-align: center;
+  }
+  .users_photos__photo_block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.users_photos__photo{
+  max-height: auto; 
+  max-width: 230px;
+  object-fit: cover;
+  transition: 1s;
+}
+.map{
+  margin-bottom: 0;
+}
+
+.map__block{
+  position: relative;
+}
+
+.contacts__card{
+  margin-left: 70px;
+  padding: 15px;
+  width: 30%;
+  height: 370px;
+  text-align: center;
+  line-height: 1.9;
+  position: absolute;
+  top: 75px;
+  z-index: 10;
+}
+.contacts__card__subtitle{
+  padding-top: 10px;
+  font-size: calc(10px + 14 * (100vw / 1280));
+  text-align: center;
+
+}
+.card-text{
+  padding-top: 20px;
+  margin-left: 10%;
+}
+.card-text-list{
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(8px + 8 * (100vw / 1280));
+  text-align: left;
+}
+.card-text-list-item{
+  display: block;
+  padding-bottom: 5px;
+}
+.contacts__card-footer{
+  padding: 10px 30px 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.contacts__card-footer-item{
+  font-size: 1.4rem;
+}
+}
+
+/* md (>=768 и <=991) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container{
+    padding: 0 50px 0 50px;
+  }
+  .first__item__header__nav{
+    padding-top: 30px;
+  }
+  .clouds{
+    bottom: 61px;
+    max-height: auto;
+  }
+  .clouds__img{
+    height: 100px;
+    width: 100%;
+    z-index: 4;
+  }
+  .big_horse{
+    bottom: 75px;
+    left: 460px;
+    z-index: 1;
+  }
+  .seagulls{
+    max-width: 135px;
+    max-height: auto;
+    left: 620px;
+    top: 107px;
+  }
+  .barn{
+    max-width: 240px;
+    height: auto;
+    left: 165px;
+    top: 435px;
+  }
+  .small_horse{
+    position: absolute;
+    max-width: 110px;
+    height: auto;
+    left: 389px;
+    top: 426px;
+  }
+  .jumping_horse{
+    display: visible;
+    position: absolute;
+    width: 451px;
+    height: 273px;
+    left: -46px;
+    top: 609px;
+  }
+  .title, .subtitle{
+    text-align: left;
+  }
+  .main{
+    max-width: 50%;
+  }
+  .main__subtitle{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 15px;
+    max-width: 100%;
+  }
+  .main__btn{
+    margin-left: 0;
+    padding: 15px 33px 15px 33px;
+    font-size: calc(6px + 10 * (100vw / 1280));
+  }
+  .jumping_horse{
+    display: inline;
+    position: absolute;
+    width: 421px;
+    height: 223px;
+    left: 16px;
+    top: 765px;
+    z-index: -1;
+  }
+  .article_about__statistic{
+    max-width: 45%;
+    line-height: 1.1em;
+    max-height: auto;
+    margin: 10px 0 40px 420px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+  }
+  .article_about__subtitle{
+    display: inline-block;
+    margin: 50px 0 50px 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .article_about__longtext{
+    max-width: 100%;
+    margin: 0 20px 30px 30px;
+    line-height: 1.5em;
+    font-size: calc(6px + 11 * (100vw / 1280));
+  }
+  .article_about__statistic__digit{
+    font-size: calc(18px + 16 * (100vw / 1280));
+    text-align: left;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+  .article_about__statistic__text{
+    font-size: calc(6px + 11 * (100vw / 1280));
+    text-align: left;
+    line-height: 1.4em;
+    padding-bottom: 20px;
+}
+  .sidebar_why_us__subtitle{
+    display: inline-block;
+    margin: 60px 0 60px 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .sidebar_why_us__block_without_subtitle{
+    display: flex;
+    padding: 0 35px 0 35px;
+
+  }
+  .sidebar_why_us__img-text-block__small-img{
+    max-width: 45%;
+    margin: 0 auto;
+  }
+  .sidebar_why_us__img-text-block__small-img img{
+    object-fit: contain;
+    max-width: auto;
+    height: 80px;	
+  }
+  .sidebar_why_us__img-text-block__small-title{
+    font-size: calc(4px + 9 * (100vw / 1280));
+  }
+  .sidebar_why_us__img-text-block__small-text{
+    font-size: calc(4px + 9 * (100vw / 1280));
+  }
+  .our_club__subtitle{
+    margin: 70px 0 20px 0;
+    text-align: center;
+  }
+  .our_club__cards{
+    padding: 40px 20px 40px 60px;
+    margin-bottom: 30px;
+    max-width: 100%;
+    max-height: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 330px; 
+  }
+  .our_club__cards-item{
+    width: 90%;
+    height: 85%;
+    border-radius: 5px;
+    position: relative;
+    margin: 30px 0 0 0;
+   
+  }
+  .our_club__cards-item-img{
+    bottom: 130px;
+    left: 42px;
+  }
+  .our_club__cards_card-title{
+    padding: 150px 0 0 0;
+    font-size: calc(9px + 8 * (100vw / 1280));
+
+  }
+  .our_club__cards_card-text{
+    font-size: calc(8px + 6 * (100vw / 1280));
+    padding: 10px 15px 10px 0;
+  }
+
+  .our_club__people_with_horse_block-img-boy{
+    width: 140px;
+    height: 301px;
+    left: 750px;
+    bottom: -5px;
+
+  }
+  .our_club__people_with_horse_block-img-girl{
+    width: 140px;
+    height: 311px;
+    left: -10px;
+    bottom: -5px;
+
+  }
+  .our_club___btn{
+    margin: 0 auto;
+  }
+
+   .our_club___clouds{
+    z-index: 5;
+    max-width: 100%;
+    max-height: 90px;
+    position: relative;
+    bottom: 70px;
+  }
+  .our_club__clouds__img{
+    object-fit: fill;
+    height: 90px;
+  }
+
+  .users_photos__subtitle{
+    text-align: center;
+  }
+  .users_photos__photo_block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+  .users_photos__photo{
+  max-height: auto; 
+  max-width: 220px;
+  object-fit: cover;
+  transition: 1s;
+}
+.map{
+  margin-bottom: 0;
+}
+
+.map__block{
+  position: relative;
+}
+
+.contacts__card{
+  margin-left: 70px;
+  padding: 15px;
+  width: 30%;
+  height: 370px;
+  text-align: center;
+  line-height: 1.9;
+  position: absolute;
+  top: 75px;
+  z-index: 10;
+}
+.contacts__card__subtitle{
+  padding-top: 10px;
+  font-size: calc(10px + 14 * (100vw / 1280));
+  text-align: center;
+
+}
+.card-text{
+  padding-top: 20px;
+  margin-left: 10%;
+}
+.card-text-list{
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(8px + 8 * (100vw / 1280));
+  text-align: left;
+}
+.card-text-list-item{
+  display: block;
+  padding-bottom: 5px;
+}
+.contacts__card-footer{
+  padding: 10px 30px 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.contacts__card-footer-item{
+  font-size: 1.4rem;
+}
+  
+}
+
+/* lg (>=992 и <=1199) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container{
+    padding: 0 50px 0 50px;
+  }
+  .big_horse{
+    bottom: 70px;
+    left: 560px;
+    z-index: 1;
+  }
+  .clouds{
+    bottom: 63px;
+    max-height: auto;
+  }
+  .clouds__img{
+    height: 100px;
+    width: 100%;
+    z-index: 4;
+  }
+  .bush__right{
+    max-width: 85px;
+    right: 0;
+    top: 285px;
+  }
+  .bush__left{
+    max-width: 84px;
+    left: 0px;
+    top: 437px;
+  }
+  .seagulls{
+    max-width: 155px;
+    max-height: auto;
+    left: 830px;
+    top: 97px;
+  }
+  .barn{
+    max-width: 260px;
+    height: auto;
+    left: 215px;
+    top: 430px;
+  }
+  .small_horse{
+    position: absolute;
+    max-width: 130px;
+    height: auto;
+    left: 469px;
+    top: 406px;
+  }
+  .header__nav__tel{
+    margin-left: 1.5em;
+    margin-right: 0;
+  }
+  .first__item__header__nav{
+    margin-left: 1em;
+  }
+  .nav-item{
+    margin-right: 1em;
+    font-size: calc(6px + 10 * (100vw / 1280));
+  }
+  .title, .subtitle{
+    text-align: left;
+  }
+  .main{
+    max-width: 50%;
+  }
+  .main__subtitle{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 15px;
+    max-width: 100%;
+  }
+  .main__btn{
+    margin-left: 0;
+    padding: 15px 38px 15px 38px;
+    font-size: calc(6px + 12 * (100vw / 1280));
+  }
+  .jumping_horse{
+    display: inline;
+    position: absolute;
+    width: 581px;
+    height: 393px;
+    left: -46px;
+    top: 739px;
+    z-index: -1;
+  }
+  .article_about__statistic{
+    max-width: 45%;
+    line-height: 1.1em;
+    max-height: auto;
+    margin: 10px 0 40px 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+  }
+  .article_about__subtitle{
+    display: inline-block;
+    margin: 50px 0 50px 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .article_about__longtext{
+    max-width: 100%;
+    margin: 20px 20px 30px 30px;
+    line-height: 1.5em;
+    font-size: calc(6px + 11 * (100vw / 1280));
+  }
+  .article_about__statistic__digit{
+    font-size: calc(18px + 16 * (100vw / 1280));
+    text-align: left;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+  .article_about__statistic__text{
+    font-size: calc(6px + 11 * (100vw / 1280));
+    text-align: left;
+    line-height: 1.4em;
+    padding-bottom: 20px;
+}
+  .sidebar_why_us__subtitle{
+    display: inline-block;
+    margin: 60px 0 60px 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .sidebar_why_us__block_without_subtitle{
+    display: flex;
+    padding: 0 35px 0 35px;
+
+  }
+  .sidebar_why_us__img-text-block__small-img{
+    max-width: 45%;
+    margin: 0 auto;
+  }
+  .sidebar_why_us__img-text-block__small-img img{
+    object-fit: contain;
+    max-width: auto;
+    height: 80px;	
+  }
+  .sidebar_why_us__img-text-block__small-title{
+    font-size: calc(6px + 9 * (100vw / 1280));
+  }
+  .sidebar_why_us__img-text-block__small-text{
+    font-size: calc(6px + 9 * (100vw / 1280));
+  }
+  .our_club {
+    padding-bottom: 90px;
+}
+  .our_club__subtitle{
+    margin: 70px 0 20px 0;
+    text-align: center;
+  }
+  .our_club__cards{
+    padding: 40px 20px 20px 170px;
+    max-width: 100%;
+    max-height: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 330px; 
+  }
+  .our_club__cards-item{
+    width: 80%;
+    height: 85%;
+    border-radius: 5px;
+    position: relative;
+    margin: 30px 0 0 0;
+   
+  }
+  .our_club__cards-item-img{
+    bottom: 130px;
+    left: 15px;
+  }
+  .our_club__cards_card-title{
+    padding: 150px 0 0 0;
+    font-size: calc(9px + 8 * (100vw / 1280));
+
+  }
+  .our_club__cards_card-text{
+    font-size: calc(8px + 6 * (100vw / 1280));
+    padding: 0px 20px 5px 0;
+
+  }
+  .our_club__people_with_horse_block-img-boy{
+    width: 140px;
+    height: 301px;
+    left: 900px;
+    bottom: -85px;
+
+  }
+  .our_club__people_with_horse_block-img-girl{
+    width: 140px;
+    height: 311px;
+    left: -10px;
+    bottom: -85px;
+
+  }
+  .our_club___btn{
+    margin: 0 auto;
+  }
+  .our_club___clouds{
+    z-index: 5;
+    max-width: 100%;
+    max-height: 90px;
+    position: relative;
+    bottom: 70px;
+  }
+  .our_club__clouds__img{
+    object-fit: fill;
+    height: 90px;
+  }
+  .users_photos__subtitle{
+    text-align: center;
+  }
+  .users_photos__photo_block{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.users_photos__photo{
+  height: 200px; 
+  width: 268px;
+  object-fit: cover;
+  transition: 1s;
+}
+.map{
+  margin-bottom: 0;
+}
+
+.map__block{
+  position: relative;
+}
+
+.contacts__card{
+  margin-left: 70px;
+  padding: 15px;
+  width: 30%;
+  height: 370px;
+  text-align: center;
+  line-height: 1.9;
+  position: absolute;
+  top: 75px;
+  z-index: 10;
+}
+.contacts__card__subtitle{
+  padding-top: 10px;
+  font-size: calc(10px + 14 * (100vw / 1280));
+  text-align: center;
+
+}
+.card-text{
+  padding-top: 20px;
+  margin-left: 10%;
+}
+.card-text-list{
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(8px + 8 * (100vw / 1280));
+  text-align: left;
+}
+.card-text-list-item{
+  display: block;
+  padding-bottom: 5px;
+}
+.contacts__card-footer{
+  padding: 10px 30px 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.contacts__card-footer-item{
+  font-size: 1.4rem;
+}
+ .bush__right-contacts{
+    position: absolute;
+    max-width: 85px;
+    right: 0;
+    top: 225px;
+    z-index: 12;
+    display: block;
+  }
+  .bush__left-contacts{
+    position: absolute;
+    max-width: 144px;
+    left: 0px;
+    top: 417px;
+    z-index: 12;
+    display: block;
+  }
+
+
+}
+
+/* xl (>=1200) */
+@media (min-width: 1200px) {
+  .container{
+    padding: 0 90px 0 90px;
+  }
+  .big_horse{
+    bottom: 250px;
+    left: 740px;
+    max-height: 40%;
+    max-width: 35%;
+    z-index: 1;
+  }
+  .clouds{
+    bottom: 50px;
+    max-height: auto;
+  }
+  .clouds__img{
+    height: 130px;
+    width: 100%;
+    z-index: 4;
+  }
+  .bush__right{
+    max-width: 105px;
+    right: 0;
+    top: 215px;
+  }
+  .bush__left{
+    max-width: 104px;
+    left: 0px;
+    top: 397px;
+  }
+  .seagulls{
+    max-width: 185px;
+    max-height: auto;
+    left: 1000px;
+    top: 127px;
+  }
+  .barn{
+    max-width: 280px;
+    height: auto;
+    left: 285px;
+    top: 425px;
+  }
+  .jumping_horse{
+    display: inline;
+    position: absolute;
+    width: 691px;
+    height: 503px;
+    left: -66px;
+    top: 839px;
+    z-index: -1;
+  }
+  .article_about__statistic{
+    max-width: 45%;
+    line-height: 1.1em;
+    max-height: auto;
+    margin: 10px 0 40px 580px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 50px;
+  }
+  .article_about__subtitle{
+    display: inline-block;
+    margin: 50px 0 50px 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .article_about__longtext{
+    max-width: 52%;
+    margin: -20px 40px 30px 567px;
+    line-height: 1.5em;
+    font-size: calc(6px + 11 * (100vw / 1280));
+  }
+  .article_about__statistic__digit{
+    font-size: calc(18px + 16 * (100vw / 1280));
+    text-align: left;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+  .article_about__statistic__text{
+    font-size: calc(6px + 11 * (100vw / 1280));
+    text-align: left;
+    line-height: 1.4em;
+    padding-bottom: 20px;
+}
+
+  .first__item__header__nav{
+    margin-left: 3.2em;
+  }
+  .nav-item{
+    margin-right: 3em;
+    font-size: calc(4px + 6 * (100vw / 1280));
+  }
+  .title, .subtitle{
+    text-align: left;
+  }
+  .main{
+    max-width: 50%;
+  }
+  .main__subtitle{
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 15px;
+    max-width: 100%;
+  }
+  .main__btn{
+    margin-left: 0;
+    padding: 15px 38px 15px 38px;
+    font-size: calc(5px + 10 * (100vw / 1280));
+  }
+  .sidebar_why_us__subtitle{
+    display: inline-block;
+    margin: 90px 0 70px 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  .sidebar_why_us__block_without_subtitle{
+    display: flex;
+    padding: 0 35px 0 35px;
+
+  }
+  .sidebar_why_us__img-text-block__small-img{
+    max-width: 45%;
+    margin: 0 auto;
+  }
+  .sidebar_why_us__img-text-block__small-img img{
+    object-fit: contain;
+    max-width: auto;
+    height: 80px;	
+  }
+  .sidebar_why_us__img-text-block__small-title{
+    font-size: calc(8px + 9 * (100vw / 1280));
+  }
+  .sidebar_why_us__img-text-block__small-text{
+    font-size: calc(6px + 9 * (100vw / 1280));
+  }
+  .our_club {
+    padding-bottom: 120px;
+}
+  .our_club__subtitle{
+    margin: 70px 0 20px 0;
+    text-align: center;
+  }
+  .our_club__cards{
+    padding: 40px 20px 20px 170px;
+    max-width: 100%;
+    max-height: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 310px; 
+    margin-bottom: 60px;
+  }
+  .our_club__cards-item{
+    width: 80%;
+    height: 85%;
+    border-radius: 5px;
+    position: relative;
+    margin: 30px 0 0 0;
+    padding-right: 10px;
+   
+  }
+  .our_club__cards-item-img{
+    bottom: 110px;
+    left: 70px;
+  }
+  .our_club__cards_card-title{
+    padding: 145px 0 0 0;
+    font-size: calc(8px + 8 * (100vw / 1280));
+
+  }
+  .our_club__cards_card-text{
+    font-size: calc(8px + 6 * (100vw / 1280));
+    padding: 0 10px 10px 0;
+  }
+  .our_club___btn{
+    margin: 0 auto;
+  }
+  .our_club__people_with_horse_block-img-boy{
+    width: 155px;
+    height: 331px;
+    left: 1120px;
+    bottom: -110px;
+    overflow: hidden;
+  }
+  .our_club__people_with_horse_block-img-girl{
+    width: 155px;
+    height: 341px;
+    left: -10px;
+    bottom: -110px;
+    overflow: hidden;
+  }
+  .our_club___clouds{
+    z-index: 5;
+    max-width: 100%;
+    max-height: 90px;
+    position: relative;
+    bottom: 70px;
+  }
+  .our_club__clouds__img{
+    object-fit: fill;
+    height: 90px;
+  }
+  .users_photos__subtitle{
+    text-align: center;
+
+  }
+  .users_photos__photo_block{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.users_photos__photo{
+  height: 220px; 
+  width: 268px;
+  object-fit: cover;
+  transition: 1s;
+}
+.photo9{
+  display: block;
+}
+.photo10{
+  display: block;
+}
+.clouds-sep__question{
+  height: 110px;
+  width: 100%;
+  top: 105px;
+}
+.question__clouds__img{
+  object-fit: fill;
+  height: 90px;
+}
+.question__photo-block{
+  max-height: 800px;
+  padding-top: 100px;
+}
+.question__form{
+  width: 30%;
+  margin-left: auto;
+  margin-right: 130px;
+  padding: 30px 30px 20px 30px;
+}
+.question__form__subtitle{
+  margin: 10px 0 15px 0;
+}
+.question__form__main-text{
+  font-size: calc(6px + 10 * (100vw / 1280));
+}
+.form-control__question__form{
+  font-size: calc(6px + 12 * (100vw / 1280));
+  padding: 15px 25px 15px 15px;
+}
+.question__form__btn{
+  margin: 0 auto;
+  padding: 12px 58px 12px 58px;
+  font-size: calc(6px + 10 * (100vw / 1280));
+  font-weight: 700;
+}
+.question__form__check{
+  font-size: calc(6px + 8 * (100vw / 1280));
+} 
+.question__girl_with_horse_and_dog{
+  position: absolute;
+  width: 1237px;
+  height: 1340px;
+  left: -19px;
+  top: 335px;
+}
+
+.map{
+  margin-bottom: 0;
+}
+
+.map__block{
+  position: relative;
+}
+
+.contacts__card{
+  margin-left: 70px;
+  padding: 15px;
+  width: 25%;
+  height: 370px;
+  text-align: center;
+  line-height: 1.9;
+  position: absolute;
+  top: 75px;
+  z-index: 10;
+}
+.contacts__card__subtitle{
+  padding-top: 10px;
+  font-size: calc(10px + 14 * (100vw / 1280));
+  text-align: center;
+
+}
+.card-text{
+  padding-top: 20px;
+  margin-left: 10%;
+}
+.card-text-list{
+  font-family: 'Montserrat', sans-serif;
+  font-size: calc(8px + 8 * (100vw / 1280));
+  text-align: left;
+}
+.card-text-list-item{
+  display: block;
+  padding-bottom: 5px;
+}
+.contacts__card-footer{
+  padding: 10px 30px 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.contacts__card-footer-item{
+  font-size: 1.4rem;
+}
+ .bush__right-contacts{
+    position: absolute;
+    max-width: 85px;
+    right: 0;
+    top: 225px;
+    z-index: 12;
+    display: block;
+  }
+  .bush__left-contacts{
+    position: absolute;
+    max-width: 144px;
+    left: 0px;
+    top: 417px;
+    z-index: 12;
+    display: block;
+  }
+
+}
