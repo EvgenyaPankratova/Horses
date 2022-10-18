@@ -1011,6 +1011,47 @@ body{
   object-fit: cover;
   transition: 1s;
 }
+.horses_photos__subtitle{
+  text-align: center;
+}
+
+.horses_photos {
+    margin: 70px 0 -10px 0;
+    overflow-x: scroll;
+    height: max-content;
+}
+.horses_photos__cards{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1200px;
+  padding-left: 10px;
+}
+.horses_photos__cards-item{
+  width: 30%;
+  max-height: 100%;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.horses_photos__cards-item-img{
+  border-radius: 5px;
+  max-width: 80%;
+  max-height: auto;
+  bottom: 120px;
+  left: 30px;
+
+}
+.horses_photos__cards_card-title{
+  padding: 280px 0 5px 0;
+  font-size: calc(10px + 10 * (100vw / 1280));
+  text-align: center;
+}
+.horses_photos__cards_card-text{
+  font-size: calc(8px + 8 * (100vw / 1280));
+  padding: 10px 0 0 0;
+}
+
 .map{
   margin-bottom: 0;
 }
@@ -1273,6 +1314,47 @@ body{
   object-fit: cover;
   transition: 1s;
 }
+.horses_photos__subtitle{
+  text-align: center;
+}
+
+.horses_photos {
+    margin: 70px 0 -10px 0;
+    overflow-x: scroll;
+    height: max-content;
+}
+.horses_photos__cards{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1200px;
+  padding-left: 10px;
+}
+.horses_photos__cards-item{
+  width: 30%;
+  max-height: 100%;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.horses_photos__cards-item-img{
+  border-radius: 5px;
+  max-width: 80%;
+  max-height: auto;
+  bottom: 120px;
+  left: 30px;
+
+}
+.horses_photos__cards_card-title{
+  padding: 280px 0 5px 0;
+  font-size: calc(10px + 10 * (100vw / 1280));
+  text-align: center;
+}
+.horses_photos__cards_card-text{
+  font-size: calc(8px + 8 * (100vw / 1280));
+  padding: 10px 0 0 0;
+}
+
 .map{
   margin-bottom: 0;
 }
@@ -1546,6 +1628,48 @@ body{
   object-fit: cover;
   transition: 1s;
 }
+.horses_photos__subtitle{
+  text-align: center;
+}
+
+.horses_photos {
+    margin: 70px 0 -10px 0;
+    overflow-x: scroll;
+    height: max-content;
+}
+.horses_photos__cards{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1200px;
+  padding-left: 10px;
+}
+.horses_photos__cards-item{
+  width: 30%;
+  max-height: 100%;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.horses_photos__cards-item-img{
+  border-radius: 5px;
+  max-width: 80%;
+  max-height: auto;
+  bottom: 150px;
+  left: 30px;
+
+}
+.horses_photos__cards_card-title{
+  padding: 270px 0 5px 0;
+  font-size: calc(10px + 10 * (100vw / 1280));
+  text-align: center;
+}
+.horses_photos__cards_card-text{
+  font-size: calc(8px + 8 * (100vw / 1280));
+  padding: 10px 0 0 0;
+}
+
+
 .map{
   margin-bottom: 0;
 }
@@ -1815,6 +1939,9 @@ body{
     object-fit: fill;
     height: 90px;
   }
+  .users_photos__photo_block{
+  
+  }
   .users_photos__subtitle{
     text-align: center;
 
@@ -1837,6 +1964,48 @@ body{
 .photo10{
   display: block;
 }
+
+.horses_photos__subtitle{
+  text-align: center;
+}
+
+.horses_photos {
+    margin: 70px 0 -10px 0;
+    overflow-x: visible;
+    height: max-content;
+}
+.horses_photos__cards{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1200px;
+  padding-left: 10px;
+}
+.horses_photos__cards-item{
+  width: 30%;
+  max-height: auto;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.horses_photos__cards-item-img{
+  border-radius: 5px;
+  max-width: 80%;
+  max-height: auto;
+  bottom: 170px;
+  left: 30px;
+
+}
+.horses_photos__cards_card-title{
+  padding: 270px 0 5px 0;
+  font-size: calc(10px + 10 * (100vw / 1280));
+  text-align: center;
+}
+.horses_photos__cards_card-text{
+  font-size: calc(8px + 8 * (100vw / 1280));
+  padding: 10px 0 10px 0;
+}
+
 .clouds-sep__question{
   height: 110px;
   width: 100%;
