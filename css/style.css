@@ -812,6 +812,19 @@ body{
     bottom: -5px;
 
   }
+  .users_photos__photo_block{
+    margin: 60px 0 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+  .users_photos__photo{
+    height: 120px; 
+  width: 188px;
+  object-fit: cover;
+  transition: 1s;
+}
 }
 
 /* sm2 (>=571 и <=767) */
@@ -1000,14 +1013,16 @@ body{
   .users_photos__subtitle{
     text-align: center;
   }
-  .users_photos__photo_block{
+.users_photos__photo_block{
+    margin: 60px 0 60px 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
-.users_photos__photo{
-  max-height: auto; 
-  max-width: 230px;
+  .users_photos__photo{
+    height: 110px; 
+  width: 178px;
   object-fit: cover;
   transition: 1s;
 }
@@ -1063,7 +1078,7 @@ body{
 .contacts__card{
   margin-left: 70px;
   padding: 15px;
-  width: 30%;
+  width: 35%;
   height: 370px;
   text-align: center;
   line-height: 1.9;
@@ -1304,13 +1319,15 @@ body{
     text-align: center;
   }
   .users_photos__photo_block{
+    margin: 70px 0 70px 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
   .users_photos__photo{
-  max-height: auto; 
-  max-width: 220px;
+    height: 160px; 
+  width: 228px;
   object-fit: cover;
   transition: 1s;
 }
@@ -1618,16 +1635,21 @@ body{
     text-align: center;
   }
   .users_photos__photo_block{
+      margin: 70px 0 70px 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
+
 .users_photos__photo{
-  height: 200px; 
-  width: 268px;
+  height: 180px; 
+  width: 248px;
   object-fit: cover;
   transition: 1s;
 }
+
+
 .horses_photos__subtitle{
   text-align: center;
 }
@@ -1939,17 +1961,16 @@ body{
     object-fit: fill;
     height: 90px;
   }
-  .users_photos__photo_block{
-  
-  }
+ 
   .users_photos__subtitle{
     text-align: center;
 
   }
   .users_photos__photo_block{
-    margin-top: 50px;
+   margin: 70px 0 70px 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
 .users_photos__photo{
@@ -1959,10 +1980,10 @@ body{
   transition: 1s;
 }
 .photo9{
-  display: block;
+ /* display: block;*/
 }
 .photo10{
-  display: block;
+  /*display: block;*/
 }
 
 .horses_photos__subtitle{
@@ -2044,6 +2065,8 @@ body{
 .question__form__check{
   font-size: calc(6px + 8 * (100vw / 1280));
 } 
+
+
 .question__girl_with_horse_and_dog{
   position: absolute;
   width: 1237px;
