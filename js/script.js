@@ -1,42 +1,25 @@
 
+let mainForm = document.querySelector('.question__form');
+let inputName = document.querySelector('#nameform');
+let inputTel = document.querySelector('#telform');
+let check = document.querySelector('.form-check-input');
 
-const forms = () => {
+mainForm.addEventListener('submit', handler); 
 
-
-
-const form = document.querySelectorAll('form');
-const input = document.querySelectorAll('form');
-
-const message = {
-	loading: "Загружаем...",
-	success: "Спасибо! Скоро мы свяжемся с вами!",
-	failure: "Хмм, что-то не так..."
+function handler (event) {
+	event.preventDefault();
+	if (check.checked){
+		if(inputTel.value.length >= 10 && inputName.value.length >= 3){
+			alert("Данные приняты, скоро мы свяжемся с вами!");
+			inputName.value = "";
+			inputTel.value = "";
+		}else{
+			alert('Номер телефона должен содержать 10 цифр, а имя - минимум 3 символа');
+		}
+		
+	}else{
+		alert("Пожалуйста, дайте согласие на обработку данных");
+	}
+	
 }
 
-const = postData = async (url, data) => { // словом async говорим функции, что в ней есть асинхронные операции(фетч)
-	document.querySelector('.status').textContent = message.loading;
-	let result = await fetch(url, { // await нужен, чтобы функция дождалась запроса, а не пошла дальше, пропустив участок кода с фетч.
-		method: "POST",
-		body: data
-	});
-
-};
-
-form.forEach( item => {
-	item.addEventListener('submit', (event) => {
-		event.preventDefault(); // отменяем стандартное событие браузера - перезагрузку
-	
-		let statusMessage = document.createElement('div');
-
-		statusMessage.classList.add('status');
-		item.appendChild(statusMessage);
-
-		const = formData = new FormData(item);
-
-
-	}); 
-
-});
-
-};
-export default forms;
